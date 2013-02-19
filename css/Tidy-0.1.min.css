@@ -1,0 +1,10 @@
+/*
+ *  Tidy v0.1
+ *
+ *  Copyright 2013 John Clifford
+ *  Licensed under the Apache License v2.0
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  <3 John Clifford - @ilikepixels - http://ilikepixels.co.uk/tidy/
+ */
+html{min-height:100%;position:relative}body{margin-top:0}.container{margin:0 auto;width:940px}.full-box,.half-box,.third-box,.two-thirds-box,.quarter-box,.three-quarters-box,.fifth-box,.sixth-box,.seven-twelfths-box,.five-twelfths-box,.span-12,.span-6,.span-4,.span-8,.span-3,.span-9,.span-2,.span-7,.span-5{display:block;width:100%;margin-left:2.0832%;margin-right:0;float:left;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.full-box,.span-12,.row,.break{clear:both;margin-left:0}.half-box,.span-6{width:48.9584%}.third-box,.span-4{width:31.94453%}.two-thirds-box,.span-8{width:65.97227%}.quarter-box,.span-3{width:23.4376%}.three-quarters-box,.span-9{width:74.4792%}.fifth-box{width:18.33344%}.sixth-box,.span-2{width:14.93067%}.seven-twelfths-box,.span-7{width:57.46533%}.five-twelfths-box,.span-5{width:40.45147%}.row>[class*="-box"]:first-child,.row>[class*="span-"]:first-child{margin-left:0}.row:after{content:"";display:block;clear:both}.row:before{content:"";display:block;clear:both}.sticky-footer{clear:both}.sticky-footer>div{width:940px;position:absolute;bottom:0}@media screen and (min-width:1170px){.container{width:1140px}.sticky-footer>div{width:1140px}}@media handheld and (max-width:480px),screen and (max-device-width:480px),screen and (max-width:600px){.container{width:95%}.sticky-footer>div{width:95%}*[class*="-box"],*[class*="span-"]{clear:both;width:100%;margin-left:0}}

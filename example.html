@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Tidy - CSS without the mess</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="css/Tidy-0.1.min.css" type="text/css" media="all" />
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<style type="text/css">
+			body
+			{
+				font-family:'Open Sans',sans-serif;
+				font-weight:400;
+				font-size: 1em;
+				
+				padding-top: 35px;
+			}
+
+			h1
+			{
+				margin-top: 0;
+				font-weight: 400;
+			}
+
+			p
+			{
+				font-size: 1.05em;
+				color: #777;
+			}
+			
+			footer
+			{
+				margin-top: 45px;
+			}
+			
+			#exampleIntro
+			{
+				padding: 8px 14px;
+				background-color: #f4f4f4;
+				margin-bottom: 15px;
+			}
+			
+			#traditional
+			{
+				padding-top: 30px;
+			}
+			
+			/* Styles to make the boxes actually visible! */
+			div[class*="-box"], div[class*="span-"]
+			{
+				margin-bottom: 10px;
+				border: 2px solid #efefef;
+				text-align: center;
+			}
+			
+			div[class*="-box"] div[class*="-box"], div[class*="span-"] div[class*="span-"]
+			{
+				background-color: #f4f4f4;
+				margin-bottom: 0;
+				border: 0px;
+			}
+		</style>
+	</head>
+	<body class="container">
+		
+		<section id="exampleIntro" class="break full-box">
+			<h1>Example Usage</h1>
+			<p>
+				View the source for this page to see how the grids below have been created. 
+				Two different approaches have been used; The Tidy approach and the 
+				traditional approach.
+			<p>
+		</section>
+
+		<h2 class="full-box">The Tidy approach</h2>
+		
+		<!-- 
+			The Tidy approach to layouts
+					
+			No containers, no rows, no mess ^^
+		-->
+		<div class="break full-box">
+			'full-box'
+		</div>
+		
+		<div class="break half-box">
+			'half-box'
+		</div>
+		
+		<div class="half-box">
+			'half-box'
+		</div>
+		
+		<div class="break third-box">
+			'third-box'
+		</div>
+		
+		<div class="two-thirds-box">
+			'two-thirds-box'
+		</div>
+		
+		<div class="break three-quarters-box">
+			
+			<div class="break half-box">
+				'half-box' inside a 'three-quarters-box'
+			</div>
+			
+			<div class="half-box">
+				'half-box' inside a 'three-quarters-box'
+			</div>
+			
+		</div>
+		
+		<div class="quarter-box">
+			quarter-box
+		</div>
+		
+		
+		<h2 id="traditional" class="full-box">The traditional approach</h2>
+		<!-- 
+			The traditional approach to layouts.
+		-->
+		<div class="container">
+			<div class="row">
+				<div class="span-12">
+					'span-12'
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="span-6">
+					'span-6'
+				</div>
+				<div class="span-6">
+					'span-6'
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span-4">
+					'span-4'
+				</div>
+				<div class="span-8">
+					'span-8'
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="span-9">
+					<div class="row">
+						<div class="span-6">
+							'span-6' inside a 'span-9'
+						</div>
+						<div class="span-6">
+							'span-6' inside a 'span-9'
+						</div>
+					</div>
+				</div>
+				<div class="span-3">
+					'span-3'
+				</div>
+			</div>
+		</div>
+		
+		
+		<footer class="full-box">
+			<p>
+				&copy; 2013 - Tidy by John Clifford - <a href="http://www.ilikepixels.co.uk/">ilikepixels.co.uk</a> - <a href="http://www.ilikepixels.co.uk/tidy">ilikepixels.co.uk/tidy</a></p>
+			</p>
+		</footer>
+	</body>
+</html>
