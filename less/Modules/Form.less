@@ -1,0 +1,297 @@
+/*
+ *--------,
+ *  FORM  |
+ *--------'
+ */
+ 
+form
+{
+    margin-bottom: 1em;
+}
+
+fieldset
+{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+legend
+{
+    display: block;
+    font-size: 1.3em;
+    margin: 0 0 .8em 0;
+    padding: 0;
+}
+
+input, label, textarea, select
+{
+    float: left;
+    clear: left;
+    display: block;
+    margin: 0;
+    font-size: 1em;
+}
+
+input, textarea, select
+{
+    margin: 0 0 1em 0;
+    padding: 5px 6px;
+    border: 1px solid @inputBorderColors;
+    .box-sizing(border-box);
+    .border-radius(@inputBorderRadius);
+    -moz-box-shadow: inset 2px 2px 2px #eee;
+    -webkit-box-shadow: inset 2px 2px 2px #eee;
+    box-shadow: inset 2px 2px 2px #eee;
+    
+    &[disabled]
+    {
+        background-color: #eee;
+        cursor: not-allowed;
+    }
+}
+
+input, select
+{
+    height: 30px;   
+}
+
+select[multiple], select[size]
+{
+    height: auto;
+}
+
+/*
+ *  Default label styles. Also includes the styles for
+ *  radio buttons and checkboxes and error messages.
+ */
+label
+{
+    font-weight: @labelFontWeight;
+    padding: 6px 0;
+    clear: left;
+    display: block;
+    float: none;
+    
+    // Labels should be assigned either of these classes when
+    // they are surrounding an radio/checkbox input element
+    &.radio, &.checkbox
+    {
+        line-height: 17px;
+        margin: 0 0.7em 1em 0.3em;
+        text-align: left;
+        font-weight: normal;
+        
+        // The inline class is used to group radio/checkboxes onto the
+        // same line
+        &.inline
+        {
+            display: inline-block;
+            padding: 0;
+            margin-top: 0.2em;
+            clear: none;
+        }
+    }
+    
+    // Inputs of type radio/checkbox must be wrapped inside a 
+    // label element with the relevant class
+    &.radio input[type="radio"], &.checkbox input[type="checkbox"]
+    {
+        margin: 2px 0.5em 0 0;
+        padding: 0;
+        border: 0;
+        float: left;
+        display: inline-block;
+        vertical-align: middle;
+        height: auto;
+        width: auto;
+    }
+    
+    // Adding a class of 'error' to one of your labels will result in
+    // the elements that follow it (inputs, help boxes) to be styled
+    // as follows.
+    &.error
+    {
+        color: @errorFontColor;
+        
+        // These selectors make sure that only elements relating to the 
+        // label with the 'error' class get styled. Labels that do not
+        // have a class of 'inline' will stop the propogation. The max
+        // amount of radio buttons/checkboxes the error class will style
+        // is 5 (need more than 5? Extend this list/use a more sensible form 
+        // element)
+        + input, + select, + textarea, + span + input,
+        + label.inline,
+        + label.inline + label.inline,
+        + label.inline + label.inline + label.inline,
+        + label.inline + label.inline + label.inline + label.inline,
+        + label.inline + label.inline + label.inline + label.inline + label.inline
+        {
+            color: @errorFontColor;
+            border-color: lighten(@errorFontColor,20%);
+            
+            // Any info paragraphs that follow the above elements should also
+            // be styled with some error formatting
+            + p.info
+            {
+                color: @errorFontColor;   
+            }
+        }
+        
+        // This selector accounts for the use of prefixes and suffixes
+        + input + .suffix + p.info, + .prefix + input + .suffix + p.info, + .prefix + input + p.info
+        {
+            color: @errorFontColor;
+        }
+    }
+}
+
+/*
+ *  Prefixes and suffixes for input fields (these should be used with input elements) d
+ */
+span.suffix, span.prefix
+{
+    display: block;
+    line-height: 28px;
+    width: 40px;
+    border: 0px solid @inputBorderColors;
+    float: left;
+    text-align: center;
+    background-color: #f5f5f5;
+    .border-radius(@inputBorderRadius);
+    
+    // Adding this 'large' class will double the width of the suffix/prefix
+    // and adjust the margins/padding
+     &.large
+    {
+        width: 80px;
+    }
+}
+
+/* A span suffix will be pulled onto the top of the input */
+span.suffix
+{
+    border-left-width: 1px;
+    margin: 1px 0 0 -42px;
+
+    &.large
+    {
+        margin-left: -82px;
+    }
+}
+
+/* A span prefix will pull the input box underneath it, and add padding to the
+   input box itself */
+span.prefix
+{
+    border-right-width: 1px;
+    margin: 1px -42px 0 1px;
+    position: absolute;
+
+    &.large
+    {
+        margin-right: -82px;
+        
+         + input
+        {
+            padding-left: 88px 
+        }
+    }
+    
+    // Inputs that are prefixed should have extra padding to ensure text
+    // entry starts after the prefix box
+    + input
+    {
+        padding-left: 48px;
+        clear: none;
+    }
+}
+
+/*
+ *  Information paragraphs should contain either help text, or error messages.
+ *  By default they sit underneath form elements, but can be made to sit inline
+ *  with other elements by using the 'inline' class
+ */
+p.info
+{
+    margin-top: -0.7em;
+    float: left;
+    clear: left;
+    padding: 4px 0;
+    font-style: italic;
+    color: lighten(@fontColor, 40%);
+    
+    &.inline
+    {
+        clear: none;
+        line-height: 30px;
+        margin: 0 0 1em 0.5em;
+        padding: 0;
+    }
+}
+
+/*
+ *  Forms with the class of inline-labels have changes made to most of the styles
+ *  they use. The following rules relate to the same things as above, but have 
+ *  been updated to create an 'inline' feel
+ */
+form.inline-labels
+{   
+    label
+    {
+        float: left;
+        clear: left;
+        width: 180px;
+        text-align: right;
+        line-height: 30px;
+        margin-right: 20px;
+        padding-top: 0;
+        
+        &.radio.inline, &.checkbox.inline
+        {
+            clear: none;
+            margin-left: 0;
+        }
+        
+        &.radio input[type="radio"], &.checkbox input[type="checkbox"]
+        {
+            margin-top: 8px;
+        }
+    }
+    
+    label.radio, label.checkbox
+    {
+        text-align: left;
+        width: auto;
+        margin: 0 1em 1em @labelInlineWidth+@labelInlineMargin;
+    }
+    
+    input, select, textarea
+    {
+        float: left;
+        margin-bottom: 1.3em;
+        clear: none;
+    }
+    
+    p.info
+    {
+        display: block;
+        float: left;
+        clear: both;
+        margin-top: -1em;
+        margin-left: @labelInlineWidth+@labelInlineMargin;
+        
+         &.inline
+        {
+            clear: none;
+            line-height: 30px;
+            margin: 0 0 0 0.5em;
+            padding: 0;
+        }
+    }
+    span.prefix
+    {
+        position: relative;   
+    }
+}
+    

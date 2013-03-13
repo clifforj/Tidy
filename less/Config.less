@@ -1,0 +1,51 @@
+// -General Variables-
+    @fontFamily: Arial, Helvetica, sans-serif;
+    
+    @fontColor: #444;
+    @errorFontColor: red;
+
+// -Layout Variables-
+    // Size (in px) of margins, when the page is being viewed at 940px
+    @marginAt940: 20;
+    
+    // The calculated percentage margin (you probably don't want to touch the next few things)
+    @calculatedMargin: percentage(@marginAt940 / 940);
+    
+    // Percentage space available for content (after margins have been taken into account)
+    @availableSpace: 100-(11*@calculatedMargin);
+    
+    // The width of a single span (based on 12 columns, used to calculated box-widths)
+    @singleSpanWidth: @availableSpace/12;
+
+// -Form Variables-
+    @labelFontWeight: 300;
+    @labelInlineWidth: 180px;
+    @labelInlineMargin: 20px;
+    
+    @inputBorderColors: #ccc;
+    @inputBorderRadius: 2px;
+    
+
+
+// -Mixins-
+    // Adds box-sizing rule with appropriate vendor prefixes
+    .box-sizing(@sizing-method)
+    {
+        box-sizing: @sizing-method;
+        -webkit-box-sizing: @sizing-method;
+    	-moz-box-sizing: @sizing-method;
+    }
+    
+    // Mixin for calculating correct percentage width based on column span
+    .box-width(@span)
+    {
+        width: (@singleSpanWidth*@span)+((@span - 1)*@calculatedMargin);
+    }
+    
+    // Adds border-radius rule with appropriate vendor prefixes
+    .border-radius(@radius)
+    {
+        border-radius: @radius;
+        -moz-border-radius: @radius;
+        -webkit-border-radius: @radius;
+    }

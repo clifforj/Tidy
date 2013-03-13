@@ -1,0 +1,197 @@
+/*
+ *----------,
+ *  LAYOUT  |
+ *----------'
+ */
+
+/* 
+ *  These styles set up the page to allow
+ *  for things like full width backgrounds with pseudo 
+ *  elements, and sticky footers
+ */
+html
+{
+    min-height: 100%;
+    position: relative
+}
+
+/*
+ *  Container - This class is used to determine the max
+ *  available width for your content. Allows us to have
+ *  very simple media queries ^^
+ */
+.container
+{
+    margin: 0 auto;
+	width: 940px
+}
+
+/*
+ *  Each different box is listed here, _every_box_ is
+ *  floated to the left, clearing isn't needed unless
+ *  you want to create a line break/new row
+ *
+ *  N.B. Default margin left is 20px when viewed as 940px layout
+ */
+.full-box,
+.half-box,
+.third-box,
+.two-thirds-box,
+.quarter-box,
+.three-quarters-box,
+.fifth-box,
+.sixth-box,
+.seven-twelfths-box,
+.five-twelfths-box,
+.span-12,
+.span-9,
+.span-8,
+.span-7,
+.span-6,
+.span-5,
+.span-4,
+.span-3,
+.span-2
+{
+    display: block;
+	width: 100%;
+	margin-left: @calculatedMargin;
+	margin-right: 0;
+	float: left;
+	.box-sizing(border-box);
+}
+
+/*
+ *  These classes should always create new 'rows' on the
+ *  page
+ */
+.full-box,
+.span-12,
+.row,
+.break
+{
+    clear: both;
+	margin-left: 0
+}
+
+/*
+ *  A whole lot of classes that simply have a width 
+ *  specified against them. Two classes per width where
+ *  appropriate to make this work with spans too
+ *
+ *  N.B. If you use more than this, _tell_me_! I'll add
+ *       them in if they seem popular!
+ */
+.half-box, .span-6
+{
+    .box-width(6);
+}
+
+.third-box, .span-4
+{
+    .box-width(4);
+}
+
+.two-thirds-box, .span-8
+{
+    .box-width(8);
+}
+
+.quarter-box, .span-3
+{
+    .box-width(3);
+}
+
+.three-quarters-box, .span-9
+{
+    .box-width(9);
+}
+
+.fifth-box
+{
+    .box-width(2.4);
+}
+
+.sixth-box, .span-2
+{
+    .box-width(2);
+}
+
+.seven-twelfths-box, .span-7
+{
+    .box-width(7);
+}
+
+.five-twelfths-box, .span-5
+{
+    .box-width(5);
+}
+
+/*
+ *  To make this work with as many markup styles as is
+ *  reasonably possible, these classes were added to 
+ *  automatically clear the margin off boxes that are
+ *  the first elements in a row.
+ *
+ *  N.B. rows aren't floated, so need the psuedo clears!
+ */
+.row > [class*="-box"]:first-child, .row > [class*="span-"]:first-child
+{
+	margin-left: 0
+}
+
+.row:after
+{
+	content: "";
+	display: block;
+	clear: both
+}
+
+.row:before
+{
+	content: "";
+	display: block;
+	clear: both
+}
+
+/*
+ *  A sticky footer that requires very basic markup
+ *
+ *  <footer class="sticky-footer">
+ *     <div><!-- Style me like one of your french girls --></div>
+ *  </footer>
+ *
+ *  N.B. Have a better way of doing this? I'd love to include it :)
+ */
+.sticky-footer
+{
+    clear: both
+}
+.sticky-footer > div 
+{
+	width: 940px;
+	position: absolute;
+	bottom: 0
+}
+
+/*
+ *  Media query for screens bigger than 1170px
+ */
+@media screen and (min-width: 1170px)
+{ 
+    .container { width: 1140px }
+	.sticky-footer > div { width: 1140px }
+}
+
+/*
+ *  Media query for screens smaller than 600px and mobile devices
+ *
+ *  N.B. Don't forget your viewport tag!
+ *       e.g.  <meta name="viewport" content="width=device-width">
+ */
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px)
+{
+	.container { width: 95% }
+	.sticky-footer > div { width: 95% }
+	*[class*="-box"], *[class*="span-"] { clear: both; width: 100%; margin-left: 0 }
+}

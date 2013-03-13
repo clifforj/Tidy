@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Form - Test - Tidy CSS</title>
+		<link rel="stylesheet" href="../Target/Tidy.css" type="text/css" media="all" />
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="container">
+		<form class="inline-labels">
+			<fieldset>
+				<legend>Inline Form Tests</legend>
+
+				<label for="inlineText">Input for Text</label>
+				<input id="inlineText" type="text" />
+				<p class="info">some helper text meybe?</p>
+				
+				<label for="inlineDisabledText">Input for Text (Disabled)</label>
+				<input id="inlineDisabledText" type="text" disabled="disabled" />
+				
+				<label for="inlineErrorText" class="error">Input for Text (Error)</label>
+				<input id="inlineErrorText" type="text" value="derp"/>
+				<p class="info inline">Oh noes! An inline error!</p>
+				
+				<label for="inlineTextSuffix">Input for Text (Suffix)</label>
+				<input id="inlineTextSuffix" type="text" />
+				<span class="suffix">Pies</span>
+				
+				<label for="inlineTextPrefix">Input for Text (Prefix)</label>
+				<span class="prefix">$</span>
+				<input id="inlineTextPrefix" type="text" />
+				
+				<label for="inlineTextPrefixSuffix">Input for Text (Prefix, Suffix)</label>
+				<span class="prefix">$</span>
+				<input id="inlineTextPrefixSuffix" type="text" />
+				<span class="suffix">.00</span>
+				
+				<label for="inlineTextPrefixSuffixError" class="error">Input (Prefix, Suffix, Error)</label>
+				<span class="prefix">$</span>
+				<input id="inlineTextPrefixSuffixError" type="text" value="100"/>
+				<span class="suffix">.00</span>
+				<p class="info inline">Please enter more money, lots more.</p>
+				
+				<label for="inlineSelect">Single Select Box</label>
+				<select id="inlineSelect">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label for="inlineSelectMulti">Multi Select Box</label>
+				<select id="inlineSelectMulti" multiple="multiple">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label>Radio Buttons (In-line)</label>
+				<label class="radio inline" for="inlineRadioOne">
+					<input id="inlineRadioOne" type="radio" name="inlineRadio" value="radioOne"/>
+					Radio Option One
+				</label>
+				<label class="radio inline" for="inlineRadioTwo">
+					<input id="inlineRadioTwo" type="radio" name="inlineRadio" value="radioTwo"/>
+					Radio Option Two
+				</label>
+				<label class="radio inline" for="inlineRadioThree">
+					<input id="inlineRadioThree" type="radio" name="inlineRadio" value="radioThree"/>
+					Radio Option Three
+				</label>
+				
+				<label class="error">Check Boxes (In-line, Error)</label>
+				<label class="checkbox inline" for="inlineCheckOne">
+					<input id="inlineCheckOne" type="checkbox" name="inlineCheck" value="1"/>
+					Check Box One
+				</label>
+				<label class="checkbox inline" for="inlineCheckTwo">
+					<input id="inlineCheckTwo" type="checkbox" name="inlineCheck" value="2"/>
+					Check Box Two
+				</label>
+				<label class="checkbox inline" for="inlineCheckThree">
+					<input id="inlineCheckThree" type="checkbox" name="inlineCheck" value="3"/>
+					Check Box Three
+				</label>
+				
+				<label class="checkbox" for="inlineLonelyCheck">
+					<input id="inlineLonelyCheck" type="checkbox" name="inlineLonelyCheck" value="3"/>
+					Lonely check box
+				</label>
+				
+				<label for="inlineTextArea">Text Area</label>
+				<textarea id="textarea" rows="4"></textarea>
+			</fieldset>
+		</form>
+		
+		<form>
+			<fieldset>
+				<legend>Default Form Tests</legend>
+				
+				<label for="defaultText">Input for Text</label>
+				<input id="defaultText" type="text" />
+				<p class="info">some helper text meybe?</p>
+				
+				<label for="defaultDisabledText">Input for Text (Disabled)</label>
+				<input id="defaultDisabledText" type="text" disabled="disabled" />
+				
+				<label for="defaultErrorText" class="error">Input for Text (Error)</label>
+				<input id="defaultErrorText" type="text"  value="derp"/>
+				<p class="info inline">Oh noes! An inline error!</p>
+				
+				<label for="defaultTextSuffix">Input for Text (Suffix)</label>
+				<input id="defaultTextSuffix" type="text" />
+				<span class="suffix">Pies</span>
+				
+				<label for="defaultTextPrefix">Input for Text (Prefix)</label>
+				<span class="prefix">$</span>
+				<input id="defaultTextPrefix" type="text" />
+				
+				<label for="defaultTextPrefixSuffix">Input for Text (Prefix, Suffix)</label>
+				<span class="prefix">$</span>
+				<input id="defaultTextPrefixSuffix" type="text" />
+				<span class="suffix">.00</span>
+				
+				<label for="defaultTextPrefixSuffixError" class="error">Input for Text (Prefix, Suffix, Error)</label>
+				<span class="prefix">$</span>
+				<input id="defaultTextPrefixSuffixError" type="text" value="100" />
+				<span class="suffix">.00</span>
+				<p class="info inline">Please enter more money, lots more.</p>
+				
+				<label for="defaultSelect">Single Select Box</label>
+				<select id="defaultSelect">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label for="defaultSelectMulti">Multi Select Box</label>
+				<select id="defaultSelectMulti" multiple="multiple">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label>Radio Buttons (In-line)</label>
+				<label class="radio inline" for="defaultRadioOne">
+					<input id="defaultRadioOne" type="radio" name="defaultRadio" value="radioOne"/>
+					Radio Option One
+				</label>
+				<label class="radio inline" for="defaultRadioTwo">
+					<input id="defaultRadioTwo" type="radio" name="defaultRadio" value="radioTwo"/>
+					Radio Option Two
+				</label>
+				<label class="radio inline" for="defaultRadioThree">
+					<input id="defaultRadioThree" type="radio" name="defaultRadio" value="radioThree"/>
+					Radio Option Three
+				</label>
+				
+				<label class="error">Check Boxes (In-line, Error)</label>
+				<label class="checkbox inline" for="defaultCheckOne">
+					<input id="defaultCheckOne" type="checkbox" name="defaultCheck" value="1"/>
+					Check Box One
+				</label>
+				<label class="checkbox inline" for="defaultCheckTwo">
+					<input id="defaultCheckTwo" type="checkbox" name="defaultCheck" value="2"/>
+					Check Box Two
+				</label>
+				<label class="checkbox inline" for="defaultCheckThree">
+					<input id="defaultCheckThree" type="checkbox" name="defaultCheck" value="3"/>
+					Check Box Three
+				</label>
+				
+				<label class="checkbox" for="defaultLonelyCheck">
+					<input id="defaultLonelyCheck" type="checkbox" name="defaultLonelyCheck" value="3"/>
+					Lonely check box
+				</label>
+				
+				<label for="defaultTextArea">Text Area</label>
+				<textarea id="textarea" rows="4"></textarea>
+			</fieldset>
+		</form>
+	</body>
+</html>
