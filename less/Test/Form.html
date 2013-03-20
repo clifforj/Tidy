@@ -5,9 +5,6 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Form - Test - Tidy CSS</title>
 		<link rel="stylesheet" href="../Target/Tidy.css" type="text/css" media="all" />
-		<!--[if IE]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 	</head>
 	<body class="container">
 		<form class="inline-labels">
@@ -178,6 +175,92 @@
 				</label>
 				
 				<label for="defaultTextArea">Text Area</label>
+				<textarea id="textarea" rows="4"></textarea>
+			</fieldset>
+		</form>
+		
+		<form class="full-width-inputs">
+			<fieldset>
+				<legend>Full Width Inputs Test</legend>
+
+				<label for="fullWidthText">Input for Text</label>
+				<input id="fullWidthText" type="text" />
+				<p class="info">some helper text meybe?</p>
+				
+				<label for="fullWidthDisabledText">Input for Text (Disabled)</label>
+				<input id="fullWidthDisabledText" type="text" disabled="disabled" />
+				
+				<label for="fullWidthErrorText" class="error">Input for Text (Error)</label>
+				<input id="fullWidthErrorText" type="text" value="derp"/>
+				<p class="info inline">Oh noes! An inline error!</p>
+				
+				<label for="fullWidthTextSuffix">Input for Text (Suffix)</label>
+				<input id="fullWidthTextSuffix" type="text" />
+				<span class="suffix">Pies</span>
+				
+				<label for="fullWidthTextPrefix">Input for Text (Prefix)</label>
+				<span class="prefix">$</span>
+				<input id="fullWidthTextPrefix" type="text" />
+				
+				<label for="fullWidthTextPrefixSuffix">Input for Text (Prefix, Suffix)</label>
+				<span class="prefix">$</span>
+				<input id="fullWidthTextPrefixSuffix" type="text" />
+				<span class="suffix">.00</span>
+				
+				<label for="fullWidthTextPrefixSuffixError" class="error">Input (Prefix, Suffix, Error)</label>
+				<span class="prefix">$</span>
+				<input id="fullWidthTextPrefixSuffixError" type="text" value="100"/>
+				<span class="suffix">.00</span>
+				<p class="info inline">Please enter more money, lots more.</p>
+				
+				<label for="fullWidthSelect">Single Select Box</label>
+				<select id="fullWidthSelect">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label for="fullWidthSelectMulti">Multi Select Box</label>
+				<select id="fullWidthSelectMulti" multiple="multiple">
+					<option>Option One</option>
+					<option>Option Two</option>
+					<option>Option Three</option>
+				</select>
+				
+				<label>Radio Buttons (In-line)</label>
+				<label class="radio inline" for="fullWidthRadioOne">
+					<input id="fullWidthRadioOne" type="radio" name="fullWidthRadio" value="radioOne"/>
+					Radio Option One
+				</label>
+				<label class="radio inline" for="fullWidthRadioTwo">
+					<input id="fullWidthRadioTwo" type="radio" name="fullWidthRadio" value="radioTwo"/>
+					Radio Option Two
+				</label>
+				<label class="radio inline" for="fullWidthRadioThree">
+					<input id="fullWidthRadioThree" type="radio" name="fullWidthRadio" value="radioThree"/>
+					Radio Option Three
+				</label>
+				
+				<label class="error">Check Boxes (In-line, Error)</label>
+				<label class="checkbox inline" for="fullWidthCheckOne">
+					<input id="fullWidthCheckOne" type="checkbox" name="fullWidthCheck" value="1"/>
+					Check Box One
+				</label>
+				<label class="checkbox inline" for="fullWidthCheckTwo">
+					<input id="fullWidthCheckTwo" type="checkbox" name="fullWidthCheck" value="2"/>
+					Check Box Two
+				</label>
+				<label class="checkbox inline" for="fullWidthCheckThree">
+					<input id="fullWidthCheckThree" type="checkbox" name="fullWidthCheck" value="3"/>
+					Check Box Three
+				</label>
+				
+				<label class="checkbox" for="fullWidthLonelyCheck">
+					<input id="fullWidthLonelyCheck" type="checkbox" name="fullWidthLonelyCheck" value="3"/>
+					Lonely check box
+				</label>
+				
+				<label for="fullWidthTextArea">Text Area</label>
 				<textarea id="textarea" rows="4"></textarea>
 			</fieldset>
 		</form>

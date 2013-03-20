@@ -72,6 +72,7 @@ label
     clear: left;
     display: block;
     float: none;
+    .box-sizing(border-box);
     
     // Labels should be assigned either of these classes when
     // they are surrounding an radio/checkbox input element
@@ -241,10 +242,10 @@ form.inline-labels
     {
         float: left;
         clear: left;
-        width: 180px;
+        width: @labelInlineWidth;
         text-align: right;
         line-height: 30px;
-        margin-right: 20px;
+        padding-right: @labelInlinePadding;
         padding-top: 0;
         
         &.radio.inline, &.checkbox.inline
@@ -263,7 +264,7 @@ form.inline-labels
     {
         text-align: left;
         width: auto;
-        margin: 0 1em 1em @labelInlineWidth+@labelInlineMargin;
+        margin: 0 1em 1em @labelInlineWidth;
     }
     
     input, select, textarea
@@ -279,7 +280,7 @@ form.inline-labels
         float: left;
         clear: both;
         margin-top: -1em;
-        margin-left: @labelInlineWidth+@labelInlineMargin;
+        margin-left: @labelInlineWidth;
         
          &.inline
         {
@@ -292,6 +293,20 @@ form.inline-labels
     span.prefix
     {
         position: relative;   
+    }
+}
+
+form.full-width-inputs
+{
+    input, select, textarea
+    {
+        width: 100%;   
+    }
+    
+    p.info.inline
+    {
+        clear: left;
+        margin: -0.7em 0 0 0;
     }
 }
     
