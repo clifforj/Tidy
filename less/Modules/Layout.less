@@ -23,7 +23,17 @@ html
 .container
 {
     margin: 0 auto;
-	width: 940px
+	width: 940px;
+    clear: both;
+}
+
+/* 
+ * Container-full - for those who like full-screen layouts 
+ */
+.container-full
+{
+    margin: 0 @calculatedMargin/2;
+    clear: both;
 }
 
 /*
@@ -31,7 +41,7 @@ html
  *  floated to the left, clearing isn't needed unless
  *  you want to create a line break/new row
  *
- *  N.B. Default margin left is 20px when viewed as 940px layout
+ *  N.B. Default margin left is 20px when viewed at 940px
  */
 .full-box,
 .half-box,
@@ -72,6 +82,18 @@ html
 {
     clear: both;
 	margin-left: 0
+}
+
+/*
+ *  This can be used to center a box within the container. Psuedo clears
+ *  get included before and after it, making the box take up an entire 
+ *  row.
+ */
+.centered-box
+{
+    float: none;
+    clear: both;
+    margin: 0 auto;
 }
 
 /*
@@ -132,22 +154,17 @@ html
  *  reasonably possible, these classes were added to 
  *  automatically clear the margin off boxes that are
  *  the first elements in a row.
- *
- *  N.B. rows aren't floated, so need the psuedo clears!
  */
 .row > [class*="-box"]:first-child, .row > [class*="span-"]:first-child
 {
 	margin-left: 0
 }
 
-.row:after
-{
-	content: "";
-	display: block;
-	clear: both
-}
-
-.row:before
+/*
+ *  Psuueedddoooo Clleeeeaaaarrrssssss
+ */
+.row:after, .row:before, 
+.centered-box:after, .centered-box:before
 {
 	content: "";
 	display: block;
