@@ -3,15 +3,209 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>Template - Tidy CSS</title>
-		<link rel="stylesheet" href="css/Tidy-0.1.min.css" type="text/css" media="all" />
+		<title>Form - Test - Tidy CSS</title>
+		<link rel="stylesheet" href="../Target/Tidy.css" type="text/css" media="all" />
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<style type="text/css">
+			body
+			{
+				font-size: 16px;
+				text-align: center;
+			}
+		
+			[class*="-box"]
+			{
+				background-color: whiteSmoke;
+				margin-bottom: 10px;
+				border: 1px solid #ddd;
+			}
+			
+			[class*="-box"] > [class*="-box"]
+			{
+				background-color: #ddd;
+				margin-bottom: 0;
+				border-width: 0;
+			}
+			
+			.container, .container-full
+			{
+				padding-top: 30px;
+			}
+		</style>
 	</head>
-	<body class="container">
-		<p class="full-box">
-			Go go go go go go!
-		</p>
+	<body>
+		<div class="container">
+			<div class="break full-box">
+				'full-box'
+			</div>
+			
+			<div class="break half-box">
+				'half-box'
+			</div>
+			<div class="half-box">
+				'half-box'
+			</div>
+			
+			<div class="break third-box">
+				'third-box'
+			</div>		
+			<div class="two-thirds-box">
+				'two-thirds-box'
+			</div>
+			
+			<div class="break five-twelfths-box">
+				'five-twelfths-box'
+			</div>
+			<div class="seven-twelfths-box">
+				'seven-twelfths-box'
+			</div>
+			
+			<div class="break sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			
+			<div class="break fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			
+			<div class="break three-quarters-box">	
+				<div class="break half-box">
+					'half-box' inside a 'three-quarters-box'
+				</div>
+				<div class="half-box">
+					'half-box' inside a 'three-quarters-box'
+				</div>
+			</div>
+			<div class="quarter-box">
+				quarter-box
+			</div>
+		</div>
+		
+		<div class="container-full">
+			<div class="break full-box">
+				'full-box'
+			</div>
+			
+			<div class="break half-box">
+				'half-box'
+			</div>
+			<div class="half-box">
+				'half-box'
+			</div>
+			
+			<div class="break third-box">
+				'third-box'
+			</div>		
+			<div class="two-thirds-box">
+				'two-thirds-box'
+			</div>
+			
+			<div class="break five-twelfths-box">
+				'five-twelfths-box'
+			</div>
+			<div class="seven-twelfths-box">
+				'seven-twelfths-box'
+			</div>
+			
+			<div class="break sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			<div class="sixth-box">
+				'sixth-box'
+			</div>
+			
+			<div class="break fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			<div class="fifth-box">
+				'fifth-box'
+			</div>
+			
+			<div class="break three-quarters-box">	
+				<div class="break half-box">
+					'half-box' inside a 'three-quarters-box'
+				</div>
+				<div class="half-box">
+					'half-box' inside a 'three-quarters-box'
+				</div>
+			</div>
+			<div class="quarter-box">
+				quarter-box
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="full-box">
+				'full-box'
+			</div>
+			
+			<div class="half-box centered-box">
+				'half-box (centered)'
+			</div>
+			
+			<div class="break third-box">
+				'third-box'
+			</div>		
+			<div class="third-box">
+				'third-box'
+			</div>
+			<div class="third-box">
+				'third-box'
+			</div>
+			
+			<div class="full-box">
+				'full-box'
+			</div>
+		</div>
 	</body>
 </html>
