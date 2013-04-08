@@ -157,6 +157,8 @@ html {
 /*
  *  Psuueedddoooo Clleeeeaaaarrrssssss
  */
+.container:before,
+.container:after,
 .row:after,
 .row:before,
 .centered-box:after,
@@ -166,18 +168,16 @@ html {
   clear: both;
 }
 /*
- *  A sticky footer that requires very basic markup
+ *  A sticky footer that requires very basic markup. You 
+ *  will need to add padding to the bottom of your container
+ *  equal to the height of your footer.
  *
  *  <footer class="sticky-footer">
- *     <div><!-- Style me like one of your french girls --></div>
+ *     <!-- Style me like one of your french girls -->
  *  </footer>
  *
- *  N.B. Have a better way of doing this? I'd love to include it :)
  */
 .sticky-footer {
-  clear: both;
-}
-.sticky-footer > div {
   width: 940px;
   position: absolute;
   bottom: 0;
@@ -189,7 +189,7 @@ html {
   .container {
     width: 1140px;
   }
-  .sticky-footer > div {
+  .sticky-footer {
     width: 1140px;
   }
 }
@@ -203,7 +203,7 @@ html {
   .container {
     width: 95%;
   }
-  .sticky-footer > div {
+  .sticky-footer {
     width: 95%;
   }
   *[class*="-box"],
