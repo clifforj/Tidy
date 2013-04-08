@@ -1,9 +1,9 @@
-/* CSS crunched with Crunch - http://crunchapp.net/ */
-/* *  Tidy v0.1 * *  Copyright 2013 John Clifford *  Licensed under the Apache License v2.0 *  http://www.apache.org/licenses/LICENSE-2.0 * *  <3 John Clifford - @ilikepixels */body {
+/* *  Tidy v0.1 * *  Copyright 2013 John Clifford *  Licensed under the Apache License v2.0 *  http://www.apache.org/licenses/LICENSE-2.0 * *  <3 John Clifford - @ilikepixels */
+ body {
   margin-top: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #444444;
-  font-size: 16px;
+  font-size: 14px;
 }
 a {
   color: #2d99cf;
@@ -472,21 +472,25 @@ ul.centered {
 }
 ul.plain,
 ul.inline,
-ul.blocks {
+ul.blocks,
+ul.breadcrumbs {
   padding-left: 0;
 }
 ul.plain,
-ul.blocks {
+ul.blocks,
+ul.breadcrumbs {
   list-style: none;
 }
 ul.blocks li {
   display: block;
 }
-ul.inline li {
+ul.inline li,
+ul.breadcrumbs li {
   display: inline-block;
   padding-left: 0.5em;
 }
-ul.inline li:first-child {
+ul.inline li:first-child,
+ul.breadcrumbs li:first-child {
   padding-left: 0;
 }
 ul.blocks li:first-child a {
@@ -534,6 +538,37 @@ ul.blocks.inline li.separated:before {
   width: 0;
   border-right: 1px solid #e6e6e6;
   border-left: 1px solid #fdfdfd;
+}
+ul.breadcrumbs li {
+  position: relative;
+  padding-left: 2em;
+}
+ul.breadcrumbs li:before,
+ul.breadcrumbs li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+}
+ul.breadcrumbs li:before {
+  left: 0.25em;
+  top: 50%;
+  width: 1em;
+  border-top: 1px solid #ddd;
+}
+ul.breadcrumbs li:after {
+  left: 1.25em;
+  top: 50%;
+  border-style: solid;
+  border-width: 4px 0 4px 4px;
+  border-color: transparent #ddd;
+  width: 0;
+  z-index: 1;
+  margin-top: -3px;
+}
+ul.breadcrumbs li:first-child:before,
+ul.breadcrumbs li:first-child:after {
+  display: none;
 }
 .nav-bar {
   height: 2.85em;
@@ -640,6 +675,10 @@ ul.blocks.inline li.separated:before {
   height: 1.2em;
   width: 0;
   border-right: 1px solid #e6e6e6;
+}
+.nav-bar ul.slide-right {
+  padding-right: 0.4em;
+  padding-left: 0;
 }
 .nav-bar ul.slide-right .dropdown ul {
   right: 0;
