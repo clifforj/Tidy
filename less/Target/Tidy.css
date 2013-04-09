@@ -1,5 +1,4 @@
-/* *  Tidy v0.1 * *  Copyright 2013 John Clifford *  Licensed under the Apache License v2.0 *  http://www.apache.org/licenses/LICENSE-2.0 * *  <3 John Clifford - @ilikepixels */
- body {
+/* *  Tidy v0.1 * *  Copyright 2013 John Clifford *  Licensed under the Apache License v2.0 *  http://www.apache.org/licenses/LICENSE-2.0 * *  <3 John Clifford - @ilikepixels */body {
   margin-top: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #444444;
@@ -467,6 +466,17 @@ form.full-width-inputs p.info.inline {
   clear: left;
   margin: -0.7em 0 0 0;
 }
+/*
+ *----------------,
+ *  LISTS & NAVS  |
+ *----------------'
+ */
+/*
+ *  General styles for lists. Includes things like:
+ *     - Inline lists
+ *     - Block lists
+ *     - Breadcrumbs
+ */
 ul.centered {
   text-align: center;
 }
@@ -481,7 +491,7 @@ ul.blocks,
 ul.breadcrumbs {
   list-style: none;
 }
-ul.blocks li {
+ul.blocks {
   display: block;
 }
 ul.inline li,
@@ -570,8 +580,12 @@ ul.breadcrumbs li:first-child:before,
 ul.breadcrumbs li:first-child:after {
   display: none;
 }
+/*
+ * The navigation bar.
+ */
 .nav-bar {
   height: 2.85em;
+  clear: both;
   border: 1px solid #e6e6e6;
   margin-bottom: 1em;
   background: #ffffff;
@@ -683,9 +697,30 @@ ul.breadcrumbs li:first-child:after {
 .nav-bar ul.slide-right .dropdown ul {
   right: 0;
 }
-.nav-bar:after,
-.nav-bar:before {
+.nav-bar:after {
   content: "";
   display: block;
   clear: both;
+}
+.nav-bar.full-width {
+  border-width: 0;
+}
+.nav-bar.full-width:before {
+  content: "";
+  display: block;
+  height: 2.85em;
+  border: 1px solid #e6e6e6;
+  border-top-width: 0;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 )";
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }

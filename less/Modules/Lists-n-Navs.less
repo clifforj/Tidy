@@ -1,5 +1,19 @@
+/*
+ *----------------,
+ *  LISTS & NAVS  |
+ *----------------'
+ */
+
+/*
+ *  General styles for lists. Includes things like:
+ *     - Inline lists
+ *     - Block lists
+ *     - Breadcrumbs
+ */
 ul
 {   
+    // This is useful for creating lists where the elements are centered
+    // inside the UL
     &.centered
     {
         text-align: center;    
@@ -15,7 +29,9 @@ ul
         list-style: none;  
     }
     
-    &.blocks li
+    // This is positioned here so it gets correctly
+    // overriden by the inline class
+    &.blocks
     {
         display: block; 
     }
@@ -34,6 +50,8 @@ ul
         }
     }
     
+    // Block type lists will require an <a> as part of their
+    // markup
     &.blocks
     {        
         li
@@ -49,6 +67,8 @@ ul
                 color: #FFF;
             }
             
+            // Adding this class to a <li> will separate it from 
+            // the others in the list with a vertical/horizontal line
             &.separated
             {
                 margin-top: 1em;
@@ -68,6 +88,7 @@ ul
             }
         }
         
+        // The main 'block' effect
         a
         {
             padding: 0.4em 0.8em;
@@ -83,6 +104,8 @@ ul
             }
         }
         
+        // Separaters need to be vertical when the list is 
+        // being displayed inline
         &.inline
         {
             li.separated
@@ -103,6 +126,8 @@ ul
         }
     }
     
+    // Simple breadcrumb list that creates arrows behind each list
+    // item (except the first)
     &.breadcrumbs
     {
         li
@@ -118,6 +143,7 @@ ul
                 height: 0;
             }
             
+            // The line
             &:before
             {
                 left: 0.25em;
@@ -126,6 +152,7 @@ ul
                 border-top: 1px solid #ddd;
             }
             
+            // The 'arrow-head'
             &:after
             {
                 left: 1.25em;
@@ -138,6 +165,7 @@ ul
                 margin-top: -3px;
             }
             
+            // The first <li> shouldn't have an arrow
             &:first-child
             {
                 &:before, &:after
@@ -149,10 +177,16 @@ ul
     }
 }
 
+/*
+ * The navigation bar.
+ */
 .nav-bar
 {
     height: 2.85em;
+    clear: both;
     
+    // All these things should become a 'header' in the 
+    // nav bar if they are used
     h1,h2,h3,h4,h5,p,span
     {
         font-size: 1em;
@@ -162,6 +196,7 @@ ul
         color: lighten(@fontColor,20%);
     }
     
+    // List of navigation links
     ul
     {
         display: inline-block;
@@ -175,7 +210,7 @@ ul
             margin: 0;
             .box-sizing(border-box);
             height: 2.85em;
-            
+
             a
             {
                 padding: 0.8em 0.9em;
@@ -196,8 +231,11 @@ ul
                 color: #FFF;
             }
             
+            // Adding the dropdown class to a <li> will add an
+            // arrow to the right hand side of it
             &.dropdown 
             {
+                // The dropdown list
                 ul
                 {
                     display: none;
@@ -234,6 +272,7 @@ ul
                     }
                 }
                 
+                // The dropdown arrow
                 > a:after
                 {   
                     content: "";
@@ -247,6 +286,7 @@ ul
                 }
             }
             
+            // The class to create separated items on the navigation bar
             &.separated
             {
                 margin-top: 0;
@@ -278,7 +318,7 @@ ul
         }
     }
     
-    &:after, &:before
+    &:after
     {
         content: "";
         display: block;
@@ -290,4 +330,25 @@ ul
     
     .background-gradient(@navGradientStart, @navGradientEnd);
     .border-radius(@borderRadius);
+    
+    &.full-width
+    {
+        border-width: 0;
+        
+        &:before
+        {
+            content: "";
+            display: block;
+            height: 2.85em;
+            
+            border: 1px solid @navBorderColor;
+            border-top-width: 0;
+           .background-gradient(@navGradientStart, @navGradientEnd);
+        
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+    }
 }
