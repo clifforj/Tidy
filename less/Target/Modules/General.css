@@ -1,0 +1,29 @@
+body {
+  margin-top: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+  font-size: 14px;
+}
+a {
+  color: #2d99cf;
+}
+.slide-right {
+  float: right;
+}
+.slide-left {
+  float: left;
+}
+.panel {
+  display: block;
+  background-color: #f5f5f5;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  padding: 0 1em;
+}
+.panel:before,
+.panel:after {
+  display: block;
+  content: "";
+  clear: both;
+}

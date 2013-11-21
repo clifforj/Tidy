@@ -1,42 +1,33 @@
-@import-once "../Config";
-
 /*----------,
  *  LAYOUT  |
  *----------'
  */
-
 /* 
  *  These styles set up the page to allow
  *  for things like full width backgrounds with pseudo 
  *  elements, and sticky footers
  */
-html
-{
-    min-height: 100%;
-    position: relative
+html {
+  min-height: 100%;
+  position: relative;
 }
-
 /*
  *  Container - This class is used to determine the max
  *  available width for your content. Allows us to have
  *  very simple media queries ^^
  */
-.container
-{
-    margin: 0 auto;
-	width: 940px;
-    clear: both;
+.container {
+  margin: 0 auto;
+  width: 940px;
+  clear: both;
 }
-
 /* 
  * Container-full - for those who like full-screen layouts 
  */
-.container-full
-{
-    margin: 0 @calculatedMargin/2;
-    clear: both;
+.container-full {
+  margin: 0 1.0638297872340425%;
+  clear: both;
 }
-
 /*
  *  Each different box is listed here, _every_box_ is
  *  floated to the left, clearing isn't needed unless
@@ -62,16 +53,16 @@ html
 .span-5,
 .span-4,
 .span-3,
-.span-2
-{
-    display: block;
-	width: 100%;
-	margin-left: @calculatedMargin;
-	margin-right: 0;
-	float: left;
-	.box-sizing(border-box);
+.span-2 {
+  display: block;
+  width: 100%;
+  margin-left: 2.127659574468085%;
+  margin-right: 0;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
-
 /*
  *  These classes should always create new 'rows' on the
  *  page
@@ -79,24 +70,20 @@ html
 .full-box,
 .span-12,
 .row,
-.break
-{
-    clear: both;
-	margin-left: 0
+.break {
+  clear: both;
+  margin-left: 0;
 }
-
 /*
  *  This can be used to center a box within the container. Psuedo clears
  *  get included before and after it, making the box take up an entire 
  *  row.
  */
-.centered-box
-{
-    float: none;
-    clear: both;
-    margin: 0 auto;
+.centered-box {
+  float: none;
+  clear: both;
+  margin: 0 auto;
 }
-
 /*
  *  A whole lot of classes that simply have a width 
  *  specified against them. Two classes per width where
@@ -105,74 +92,65 @@ html
  *  N.B. If you use more than this, _tell_me_! I'll add
  *       them in if they seem popular!
  */
-.half-box, .span-6
-{
-    .box-width(6);
+.half-box,
+.span-6 {
+  width: 48.93617021276595%;
 }
-
-.third-box, .span-4
-{
-    .box-width(4);
+.third-box,
+.span-4 {
+  width: 31.91489361702127%;
 }
-
-.two-thirds-box, .span-8
-{
-    .box-width(8);
+.two-thirds-box,
+.span-8 {
+  width: 65.95744680851062%;
 }
-
-.quarter-box, .span-3
-{
-    .box-width(3);
+.quarter-box,
+.span-3 {
+  width: 23.404255319148934%;
 }
-
-.three-quarters-box, .span-9
-{
-    .box-width(9);
+.three-quarters-box,
+.span-9 {
+  width: 74.46808510638297%;
 }
-
-.fifth-box
-{
-    .box-width(2.4);
+.fifth-box {
+  width: 18.297872340425528%;
 }
-
-.sixth-box, .span-2
-{
-    .box-width(2);
+.sixth-box,
+.span-2 {
+  width: 14.893617021276594%;
 }
-
-.seven-twelfths-box, .span-7
-{
-    .box-width(7);
+.seven-twelfths-box,
+.span-7 {
+  width: 57.44680851063829%;
 }
-
-.five-twelfths-box, .span-5
-{
-    .box-width(5);
+.five-twelfths-box,
+.span-5 {
+  width: 40.42553191489361%;
 }
-
 /*
  *  To make this work with as many markup styles as is
  *  reasonably possible, these classes were added to 
  *  automatically clear the margin off boxes that are
  *  the first elements in a row.
  */
-.row > [class*="-box"]:first-child, .row > [class*="span-"]:first-child, [class*="-box"]:first-child
-{
-	margin-left: 0
+.row > [class*="-box"]:first-child,
+.row > [class*="span-"]:first-child,
+[class*="-box"]:first-child {
+  margin-left: 0;
 }
-
 /*
  *  Psuueedddoooo Clleeeeaaaarrrssssss
  */
-.container:before, .container:after,
-.row:after, .row:before, 
-.centered-box:after, .centered-box:before
-{
-	content: "";
-	display: block;
-	clear: both
+.container:before,
+.container:after,
+.row:after,
+.row:before,
+.centered-box:after,
+.centered-box:before {
+  content: "";
+  display: block;
+  clear: both;
 }
-
 /*
  *  A sticky footer that requires very basic markup. You 
  *  will need to add padding to the bottom of your container
@@ -183,31 +161,39 @@ html
  *  </footer>
  *
  */
-.sticky-footer
-{
-	width: 940px;
-	position: absolute;
-	bottom: 0
+.sticky-footer {
+  width: 940px;
+  position: absolute;
+  bottom: 0;
 }
-
 /*
  *  Media query for screens bigger than 1170px
  */
-@media screen and (min-width: 1170px)
-{ 
-    .container { width: 1140px }
-	.sticky-footer { width: 1140px }
+@media screen and (min-width: 1170px) {
+  .container {
+    width: 1140px;
+  }
+  .sticky-footer {
+    width: 1140px;
+  }
 }
-
 /*
  *  Media query for screens smaller than 600px and mobile devices
  *
  *  N.B. Don't forget your viewport tag!
  *       e.g.  <meta name="viewport" content="width=device-width">
  */
-@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px)
-{
-	.container { width: 95% }
-	.sticky-footer { width: 95% }
-	*[class*="-box"], *[class*="span-"] { clear: both; width: 100%; margin-left: 0 }
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+  .sticky-footer {
+    width: 95%;
+  }
+  *[class*="-box"],
+  *[class*="span-"] {
+    clear: both;
+    width: 100%;
+    margin-left: 0;
+  }
 }

@@ -1,0 +1,232 @@
+/*----------------,
+ *  LISTS & NAVS  |
+ *----------------'
+ */
+/*
+ *  General styles for lists. Includes things like:
+ *     - Inline lists
+ *     - Block lists
+ *     - Breadcrumbs
+ */
+ul.centered {
+  text-align: center;
+}
+ul.plain,
+ul.inline,
+ul.blocks,
+ul.breadcrumbs {
+  padding-left: 0;
+}
+ul.plain,
+ul.blocks,
+ul.breadcrumbs {
+  list-style: none;
+}
+ul.blocks {
+  display: block;
+}
+ul.inline li,
+ul.breadcrumbs li {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+ul.inline li:first-child,
+ul.breadcrumbs li:first-child {
+  padding-left: 0;
+}
+ul.blocks li:first-child a {
+  padding-left: 0.8em;
+}
+ul.blocks li.active a {
+  background-color: #2d99cf;
+  color: #FFF;
+}
+ul.blocks li.separated {
+  margin-top: 1em;
+  position: relative;
+}
+ul.blocks li.separated:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.6em;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #fdfdfd;
+}
+ul.blocks a {
+  padding: 0.4em 0.8em;
+  margin: 0.2em 0;
+  display: block;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  text-decoration: none;
+}
+ul.blocks a:hover {
+  background-color: whiteSmoke;
+  color: #247aa5;
+}
+ul.blocks.inline li.separated {
+  margin-top: 0;
+  margin-left: 1em;
+}
+ul.blocks.inline li.separated:before {
+  left: -0.5em;
+  top: 0.5em;
+  height: 50%;
+  width: 0;
+  border-right: 1px solid #e6e6e6;
+  border-left: 1px solid #fdfdfd;
+}
+ul.breadcrumbs li {
+  position: relative;
+  padding-left: 2em;
+}
+ul.breadcrumbs li:before,
+ul.breadcrumbs li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+}
+ul.breadcrumbs li:before {
+  left: 0.25em;
+  top: 50%;
+  width: 1em;
+  border-top: 1px solid #bbb;
+}
+ul.breadcrumbs li:after {
+  left: 1.25em;
+  top: 50%;
+  border-style: solid;
+  border-width: 4px 0 4px 4px;
+  border-color: transparent #bbb;
+  width: 0;
+  z-index: 1;
+  margin-top: -3px;
+}
+ul.breadcrumbs li:first-child:before,
+ul.breadcrumbs li:first-child:after {
+  display: none;
+}
+/*
+ * The navigation bar.
+ */
+.nav-bar {
+  line-height: 3em;
+  clear: both;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  background-color: #ffffff;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.nav-bar .brand {
+  font-size: 1em;
+  display: inline-block;
+  padding: 0 1.2em;
+  margin: 0;
+  color: #777777;
+}
+.nav-bar ul {
+  display: inline-block;
+  padding-left: 0.4em;
+  margin: 0;
+}
+.nav-bar ul li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.nav-bar ul li a {
+  padding: 0 0.9em;
+  display: block;
+  text-decoration: none;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.nav-bar ul li a:hover {
+  background-color: whiteSmoke;
+}
+.nav-bar ul li.active a {
+  background-color: #2d99cf;
+  color: #FFF;
+}
+.nav-bar ul li.dropdown ul {
+  display: none;
+  position: absolute;
+  padding-left: 0;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  z-index: 100;
+}
+.nav-bar ul li.dropdown ul li {
+  display: block;
+  height: auto;
+}
+.nav-bar ul li.dropdown ul li a {
+  padding: 0.5em 0.9em;
+  height: auto;
+  white-space: nowrap;
+}
+.nav-bar ul li.dropdown:hover ul {
+  display: block;
+}
+.nav-bar ul li.dropdown:hover > a {
+  background-color: whiteSmoke;
+}
+.nav-bar ul li.dropdown > a:after {
+  content: "";
+  display: inline-block;
+  height: 0;
+  width: 0;
+  margin-left: 0.8em;
+  border-style: solid;
+  border-width: .4em .4em 0;
+  border-color: #aaa transparent;
+  position: relative;
+  top: -0.115em;
+}
+.nav-bar ul li.separated {
+  margin-left: .237em;
+  padding-left: .5em;
+  border-left: 1px solid #e6e6e6;
+}
+.nav-bar ul.slide-right {
+  padding-right: 0.4em;
+  padding-left: 0;
+}
+.nav-bar ul.slide-right .dropdown ul {
+  right: 0;
+}
+.nav-bar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.nav-bar.full-width {
+  border-width: 0;
+}
+.nav-bar.full-width:before {
+  content: "";
+  display: block;
+  height: 3em;
+  border: 1px solid #e6e6e6;
+  border-top-width: 0;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.nav-bar.full-width .brand {
+  padding-left: 0;
+}

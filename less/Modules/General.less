@@ -1,3 +1,5 @@
+@import-once "../Config";
+
 body
 {
     margin-top: 0;
@@ -8,7 +10,7 @@ body
 
 a
 {
-    color: @linkColor;   
+    color: @linkColor;
 }
 
 .slide-right
@@ -19,4 +21,19 @@ a
 .slide-left
 {
     float: left;   
+}
+
+.panel
+{
+    display: block;
+    background-color: @panelBackgroundColor;
+    .border-radius(@borderRadius);
+    padding: 0 1em;
+}
+
+.panel:before, .panel:after
+{
+    display: block;
+    content: "";
+    clear: both;
 }

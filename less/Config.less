@@ -1,17 +1,17 @@
 // -General Variables-
     @fontFamily: Arial, Helvetica, sans-serif;
-    
     @fontColor: #444;
     @errorFontColor: red;
     @primaryColor: #2d99cf;
     @linkColor: @primaryColor;
     @highlightColor: whiteSmoke;
-    @borderRadius: 5px;
+    @borderRadius: 0;
+    @borderColor: #e6e6e6;
+    @panelBackgroundColor: #f5f5f5;
     
 // -Nav-bar Variables-
     @navBorderColor: #e6e6e6;
-    @navGradientStart: #fff;
-    @navGradientEnd: #fff;
+    @navBackgroundColor: #fff;
     @navDropdownColor: #fff;
     @navDropdownBorderColor: #e6e6e6;
 
@@ -59,6 +59,13 @@
         border-radius: @radius;
         -moz-border-radius: @radius;
         -webkit-border-radius: @radius;
+    }
+    
+    .border-radius-all(@t,@r,@b,@l)
+    {
+        border-radius: @t @r @b @l;
+        -moz-border-radius: @t @r @b @l;
+        -webkit-border-radius: @t @r @b @l;
     }
     
     .background-gradient(@start, @end)

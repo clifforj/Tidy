@@ -1,5 +1,6 @@
-/*
- *----------------,
+@import-once "../Config";
+
+/*----------------,
  *  LISTS & NAVS  |
  *----------------'
  */
@@ -149,7 +150,7 @@ ul
                 left: 0.25em;
                 top: 50%;
                 width: 1em;
-                border-top: 1px solid #ddd;
+                border-top: 1px solid #bbb;
             }
             
             // The 'arrow-head'
@@ -159,7 +160,7 @@ ul
                 top: 50%;
                 border-style: solid;
                 border-width: 4px 0 4px 4px;
-                border-color: transparent #ddd;
+                border-color: transparent #bbb;
                 width: 0;
                 z-index: 1;
                 margin-top: -3px;
@@ -182,16 +183,16 @@ ul
  */
 .nav-bar
 {
-    height: 2.85em;
+    line-height: 3em;
     clear: both;
     
     // All these things should become a 'header' in the 
     // nav bar if they are used
-    h1,h2,h3,h4,h5,p,span
+    .brand
     {
         font-size: 1em;
         display: inline-block;
-        padding: 0.8em 1.2em;
+        padding: 0 1.2em;
         margin: 0;
         color: lighten(@fontColor,20%);
     }
@@ -209,11 +210,10 @@ ul
             position: relative;
             margin: 0;
             .box-sizing(border-box);
-            height: 2.85em;
 
             a
             {
-                padding: 0.8em 0.9em;
+                padding: 0 0.9em;
                 display: block;
                 text-decoration: none;
                 height: 100%;
@@ -277,32 +277,23 @@ ul
                 {   
                     content: "";
                     display: inline-block;
+                    height: 0;
+                    width: 0;
                     margin-left: 0.8em;
                     border-style: solid;
-                    border-width: 5px 5px 0;
+                    border-width: .4em .4em 0;
                     border-color: #aaa transparent;
-                    margin-top: 0.45em;
-                    float: right;
+                    position: relative;
+                    top: -0.115em;
                 }
             }
             
             // The class to create separated items on the navigation bar
             &.separated
             {
-                margin-top: 0;
-                margin-left: 1em;
-                
-                &:before
-                {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    left: -0.7em;
-                    top: 0.8em;
-                    height: 1.2em;
-                    width: 0;
-                    border-right: 1px solid @navBorderColor;
-                }
+                margin-left: .237em;
+                padding-left: .5em;
+                border-left: 1px solid @navBorderColor;
             }
         }
         
@@ -328,7 +319,7 @@ ul
     border: 1px solid @navBorderColor;
     margin-bottom: 1em;
     
-    .background-gradient(@navGradientStart, @navGradientEnd);
+    background-color: @navBackgroundColor;
     .border-radius(@borderRadius);
     
     &.full-width
@@ -339,16 +330,21 @@ ul
         {
             content: "";
             display: block;
-            height: 2.85em;
+            height: 3em;
             
             border: 1px solid @navBorderColor;
             border-top-width: 0;
-           .background-gradient(@navGradientStart, @navGradientEnd);
+            background-color: @navBackgroundColor;
         
             position: absolute;
             left: 0;
             right: 0;
             z-index: -1;
+        }
+        
+        .brand
+        {
+            padding-left: 0;   
         }
     }
 }

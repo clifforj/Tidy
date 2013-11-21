@@ -1,0 +1,77 @@
+@import-once "../Config";
+
+/*--------,
+ *  Type  |
+ *--------'
+ */
+p
+{
+    line-height: 1.3em;
+}
+
+p.intro
+{
+    font-size: 1.12em;
+    font-weight: bold;
+    color: #888;
+}
+
+pre
+{
+    display: block;
+    font-family: monospace;
+    padding: 1em;
+    border: 1px solid @borderColor;
+    background-color: @panelBackgroundColor;
+    .border-radius(@borderRadius);
+}
+
+code
+{
+    display: inline-block;
+    border: 1px solid @borderColor;
+    background-color: @panelBackgroundColor;
+    vertical-align: baseline;
+    padding: 0.1em 0.3em;
+    .border-radius(@borderRadius);
+}
+
+[data-tooltip]
+{
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+    color: @linkColor;
+    cursor: pointer;
+}
+
+[data-tooltip]:hover:before
+{
+	display: block;
+	position: absolute;
+	top: -100%;
+	padding: 3px 8px;
+	margin-top: -8px;
+	width: auto;
+	background-color: #555;
+	content: attr(data-tooltip);
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+[data-tooltip]:hover:after
+{
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 10px;
+	border-style: solid;
+	border-width: 5px 3px 0;
+	border-color: #555 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+}
